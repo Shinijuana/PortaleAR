@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
   <title>Sensitron AR</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="main.css">
   <style>
     :not(:defined) > * {
       display: none;
@@ -109,17 +110,17 @@
 </head>
 <body>
 
- <model-viewer src="PortaleAR.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" autoplay camera-orbit="-176.8deg 93.04deg 20.71m" field-of-view="30deg">
-   <button class="Hotspot" slot="hotspot-1" data-surface="24 0 912 937 866 0.424 0.119 0.458" data-visibility-attribute="visible"></button> <!-- primo a destra -->
-   <button class="Hotspot" slot="hotspot-2" data-surface="24 0 722 745 672 0.393 0.184 0.423" data-visibility-attribute="visible"></button>
-   <button class="Hotspot" slot="hotspot-3" data-surface="24 0 528 553 482 0.444 0.120 0.436" data-visibility-attribute="visible"></button>
-   <button class="Hotspot" slot="hotspot-4" data-surface="24 0 338 361 288 0.461 0.174 0.365" data-visibility-attribute="visible"></button>
-   <button class="Hotspot" slot="hotspot-5" data-surface="24 0 144 169 98 0.415 0.167 0.418" data-visibility-attribute="visible"></button>
-   <button class="Hotspot" slot="hotspot-6" data-surface="24 0 1832 1904 1880 0.432 0.067 0.501" data-visibility-attribute="visible"></button><!-- primo a sinistra -->
-   <button class="Hotspot" slot="hotspot-7" data-surface="24 0 1640 1712 1688 0.400 0.113 0.487" data-visibility-attribute="visible"></button>
-   <button class="Hotspot" slot="hotspot-8" data-surface="24 0 1448 1520 1496 0.423 0.095 0.482" data-visibility-attribute="visible"></button>
-   <button class="Hotspot" slot="hotspot-9" data-surface="24 0 1256 1328 1304 0.432 0.111 0.457" data-visibility-attribute="visible"></button>
-   <button class="Hotspot" slot="hotspot-10" data-surface="24 0 1064 1136 1112 0.373 0.165 0.461" data-visibility-attribute="visible"></button>
+ <model-viewer src="PortaleAR.glb" ar ar-modes="webxr scene-viewer" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" autoplay camera-orbit="-176.8deg 93.04deg 20.71m" field-of-view="30deg">
+   <button class="Hotspot" slot="hotspot-1" data-surface="24 0 104 176 152 0.300 0.241 0.459" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-2" data-surface="33 0 104 176 152 0.356 0.213 0.431" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-3" data-surface="32 0 104 176 152 0.381 0.145 0.474" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-4" data-surface="31 0 104 176 152 0.326 0.156 0.517" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-5" data-surface="30 0 104 176 152 0.246 0.283 0.471" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-6" data-surface="29 0 144 169 98 0.391 0.231 0.378" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-8" data-surface="28 0 146 169 96 0.236 0.355 0.409" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-9" data-surface="27 0 144 169 98 0.357 0.189 0.454" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-10" data-surface="26 0 146 169 96 0.371 0.225 0.403" data-visibility-attribute="visible"></button>
+   <button class="Hotspot" slot="hotspot-11" data-surface="25 0 144 169 98 0.472 0.014 0.515" data-visibility-attribute="visible"></button>
     <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>
@@ -130,6 +131,26 @@
         <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
     </div>
 </model-viewer>
+  
+  <div id="banner" style="display: none;">
+  <div class="banner-content">
+    <h1>Titolo del Banner</h1>
+    <p>Questo è un messaggio all'interno del banner. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut efficitur nisi. Vivamus in elementum lectus, ut ullamcorper arcu.</p>
+    <img src="close.png" alt="Chiudi" id="closeBanner">
+  </div>
+</div>
 
+  <script> // Apertura e chiusura del banner
+  document.querySelectorAll('.Hotspot').forEach(hotspot => {
+    hotspot.addEventListener('click', function() {
+      document.getElementById('banner').style.display = 'flex';
+    });
+  });
+
+  document.getElementById('closeBanner').addEventListener('click', function() {
+    document.getElementById('banner').style.display = 'none';
+  });
+</script>
+  
 </body>
 </html>
