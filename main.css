@@ -24,6 +24,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 2;
     background: rgba(24, 24, 155, 0.7); /* Blu con trasparenza */
     justify-content: center;
     align-items: center;
@@ -58,10 +59,15 @@ p {
 #closeBanner {
     cursor: pointer;
     display: block;
-    margin: 20px auto;
-    width: 5vw; /* Dimensione responsiva basata sulla larghezza dello schermo */
+    width: 3.5vw; /* Dimensione responsiva basata sulla larghezza dello schermo */
     max-width: 50px; /* Limite massimo */
     height: auto; /* Mantiene il rapporto originale */
+    
+    /* Posizionamento fisso nella parte bassa */
+    position: fixed;
+    bottom: 20px; /* Distanza dal fondo dello schermo */
+    left: 50%; /* Centra orizzontalmente */
+    transform: translateX(-50%); /* Corregge il centramento */
 }
 
 .logos {
